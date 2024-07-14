@@ -1,7 +1,7 @@
 "use strict";
 /* A collection of utility functions built to save your ass. */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.selectRandom = exports.parseObjectToQueryString = exports.parseQueryStringToObject = exports.formatDate = exports.groupBy = exports.isEqual = exports.shuffleArray = exports.chunk = exports.uniq = exports.flattenArray = exports.randomString = exports.snakeCase = exports.kebabCase = exports.camelCase = exports.isEmail = exports.isEmpty = exports.deepClone = exports.truncate = exports.isPalindrome = exports.reverseString = exports.capitalize = exports.getLastLetter = exports.getFirstLetter = exports.getNthLetter = exports.slugify = void 0;
+exports.capitalizeFirstLetter = exports.selectRandom = exports.parseObjectToQueryString = exports.parseQueryStringToObject = exports.formatDate = exports.groupBy = exports.isEqual = exports.shuffleArray = exports.chunk = exports.uniq = exports.flattenArray = exports.randomString = exports.snakeCase = exports.kebabCase = exports.camelCase = exports.isEmail = exports.isEmpty = exports.deepClone = exports.truncate = exports.isPalindrome = exports.reverseString = exports.capitalize = exports.getLastLetter = exports.getFirstLetter = exports.getNthLetter = exports.slugify = void 0;
 /**
  * Converts a string into a URL-friendly slug.
  * @param {string} text - The text to slugify.
@@ -316,3 +316,13 @@ const selectRandom = (array) => {
     return array[randomIndex];
 };
 exports.selectRandom = selectRandom;
+/**
+ * Capitalizes the first letter of a given string and converts the rest to lowercase.
+ *
+ * @param {string} text - The string to be transformed.
+ * @returns {string} - The transformed string with the first letter capitalized and the rest in lowercase.
+ */
+const capitalizeFirstLetter = (text) => {
+    return text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
+};
+exports.capitalizeFirstLetter = capitalizeFirstLetter;

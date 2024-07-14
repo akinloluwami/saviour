@@ -24,6 +24,7 @@ import {
   parseQueryStringToObject,
   parseObjectToQueryString,
   selectRandom,
+  capitalizeFirstLetter,
 } from "../src/saviorjs";
 
 describe("Utility Functions", () => {
@@ -173,5 +174,11 @@ describe("Utility Functions", () => {
     const array = [1, 2, 3, 4, 5];
     const randomElement = selectRandom(array);
     expect(array).toContain(randomElement);
+  });
+
+  test("capitalizeFirstLetter", () => {
+    expect(capitalizeFirstLetter("hello")).toBe("Hello");
+    expect(capitalizeFirstLetter("WORLD")).toBe("World");
+    expect(capitalizeFirstLetter("")).toBe("");
   });
 });

@@ -160,3 +160,10 @@ export declare const parseObjectToQueryString: (obj: {
  * @returns {T | undefined} - The randomly selected element, or undefined if the array is empty.
  */
 export declare const selectRandom: <T>(array: T[]) => T | undefined;
+/**
+ * Capitalizes the first letter of a given string and converts the rest to lowercase.
+ *
+ * @param {string} text - The string to be transformed.
+ * @returns {string} - The transformed string with the first letter capitalized and the rest in lowercase.
+ */
+export declare const capitalizeFirstLetter: (text: string) => string;

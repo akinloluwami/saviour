@@ -52,4 +52,5 @@ pnpm add saviourjs
 | `parseQueryStringToObject` | Parses a query string into an object.            | `queryString: string`                  |
 | `parseObjectToQueryString` | Converts an object into a query string.          | `obj: { [key: string]: any }`          |
 | `selectRandom`             | Selects a random element from an array.          | `array: T[]`                           |
+|`capitalizeFirstLetter` |  Capitalizes the first letter of a given string and converts the rest to lowercase. | `text: string`
 <!-- prettier-ignore-end -->
