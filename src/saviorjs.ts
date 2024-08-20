@@ -92,7 +92,7 @@ export const truncate = (text: string, length: number): string => {
  * @returns {T} - The cloned object.
  */
 export const deepClone = <T>(obj: T): T => {
-  return JSON.parse(JSON.stringify(obj));
+  return structuredClone(obj);
 };
 
 /**
@@ -255,17 +255,14 @@ export const groupBy = <T>(
   array: T[],
   key: ((item: T) => string) | keyof T
 ): { [key: string]: T[] } => {
-  return array.reduce(
-    (acc, item) => {
-      const groupKey = typeof key === "function" ? key(item) : item[key];
-      if (!acc[groupKey as string]) {
-        acc[groupKey as string] = [];
-      }
-      acc[groupKey as string].push(item);
-      return acc;
-    },
-    {} as { [key: string]: T[] }
-  );
+  return array.reduce((acc, item) => {
+    const groupKey = typeof key === "function" ? key(item) : item[key];
+    if (!acc[groupKey as string]) {
+      acc[groupKey as string] = [];
+    }
+    acc[groupKey as string].push(item);
+    return acc;
+  }, {} as { [key: string]: T[] });
 };
 
 /**
